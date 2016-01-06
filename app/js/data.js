@@ -12,9 +12,8 @@
       if (err) {
         emitter.emit('load:error', 'Could not load projects data');
       } else {
-        console.log(resp);
-        projects = JSON.stringify(resp.body);
-        emitter.emit('load:projects');
+        projects = resp.body;
+        emitter.emit('load:projects', projects);
       }
     });
   }

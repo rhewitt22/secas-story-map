@@ -8,8 +8,8 @@
       pubsub.on(eventName, cb);
     }
 
-    function emit(eventName) {
-      pubsub.emit(eventName);
+    function emit(eventName, data) {
+      pubsub.emit(eventName, data);
     }
 
     exports.on = on;

@@ -10,10 +10,11 @@
   data.init();
 
   emitter.on('load:projects', function (prjs) {
-    projects = prjs;
+    projects = JSON.parse(prjs);
 
     map.init({
-      center: [36.372777, -83.688760]
+      center: [36.372777, -83.688760],
+      data: projects
     });
   });
 

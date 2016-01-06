@@ -1,0 +1,33 @@
+{
+  "name": "story-map",
+  "version": "1.0.0",
+  "description": "SECAS story map",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "shrink-data": "json-minify app/data/projects.json > dist/data/projects.json",
+    "build-js": "browserify app/js/index.js | uglifyjs > dist/js/bundle.js",
+    "build-styles": "node-sass --output-style compressed app/styles/main.scss dist/css/main.css",
+    "watch-styles": "node-sass app/styles/main.scss dist/css/main.css -w 'app/styles/**/*.scss'",
+    "watch-js": "watchify -d app/js/index.js -o dist/js/bundle.js -v",
+    "server": "browser-sync start --server dist --files 'dist/**/*'",
+    "serve": "npm run shrink-data & npm run server"
+  },
+  "author": "@r0yhewitt",
+  "license": "SAX-PD",
+  "dependencies": {
+    "events": "^1.1.0",
+    "leaflet": "^1.0.0-beta.2",
+    "lodash.defaults": "^3.1.2",
+    "lodash.find": "^3.2.1",
+    "xhr": "^2.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "browserify": "^12.0.1",
+    "json-minify": "^1.0.0",
+    "node-sass": "^3.4.2",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.6.1"
+  }
+}

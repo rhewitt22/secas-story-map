@@ -3,17 +3,14 @@
 
   var emitter = require('./mediator');
   var xhr = require('xhr')
-  var _ = {
-    defaults: require('lodash.defaults'),
-    find: require('lodash.find')
-  };
+  var _ = require('./util')._;
 
   var projects;
 
   function init() {
     xhr.get('../data/projects.json', function(err, resp) {
       if (err) {
-        throw 'Couldn\'t download the projects data file';
+        emitter.emit('load:error', 'Could not load projects data');
       } else {
         console.log(resp);
         projects = JSON.stringify(resp.body);

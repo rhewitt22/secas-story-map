@@ -10,7 +10,6 @@
   data.init();
 
   emitter.on('load:projects', function (prjs) {
-    console.log('Yargs');
     projects = prjs;
 
     map.init({

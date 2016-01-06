@@ -2,11 +2,10 @@
   'use strict';
 
   var L = require('leaflet');
-  var _ = {
-    defaults: require('lodash.defaults')
-  };
+  var _ = require('./util')._
 
-  var options, map, emitter;
+  var options, map;
+
   var defaults = {
     zoom: 5,
     el: 'map'
@@ -16,7 +15,6 @@
     options = _.defaults({}, opts, defaults);
     createMap();
     addBasemap();
-    addHandlers();
   }
 
   function createMap() {

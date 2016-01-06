@@ -3,7 +3,6 @@
 
   var EventEmitter = require('events').EventEmitter,
       pubsub = new EventEmitter();
-      console.log(pubsub);
 
     function on(eventName, cb) {
       pubsub.on(eventName, cb);

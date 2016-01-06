@@ -14,7 +14,6 @@
 
   function init(opts) {
     options = _.defaults({}, opts, defaults);
-    emitter = options.emitter;
     createMap();
     addBasemap();
     addHandlers();

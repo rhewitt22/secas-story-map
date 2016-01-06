@@ -7,14 +7,14 @@
 
   var projects;
 
-  data.init(emitter);
+  data.init();
 
   emitter.on('load:projects', function (prjs) {
+    console.log('Yargs');
     projects = prjs;
 
     map.init({
-      center: [36.372777, -83.688760],
-      emitter: emitter
+      center: [36.372777, -83.688760]
     });
   });
 
